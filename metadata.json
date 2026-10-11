@@ -1,0 +1,6 @@
+{
+  "name": "Mugiwara AI Dashboard",
+  "description": "Full-stack AI-powered productivity platform inspired by One Piece, featuring your AI crew, projects, tasks, persistent memory, and live activity.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
