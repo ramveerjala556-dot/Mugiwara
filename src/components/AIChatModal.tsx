@@ -84,6 +84,7 @@ export const AIChatModal: React.FC<AIChatModalProps> = ({
   if (!isOpen) return null;
 
   const crewAvatars: Record<string, string> = {
+    ChatGPT: LUFFY_AVATAR,
     Luffy: LUFFY_AVATAR,
     Zoro: ZORO_AVATAR,
     Nami: NAMI_AVATAR,

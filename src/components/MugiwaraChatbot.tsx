@@ -106,19 +106,26 @@ export const MugiwaraChatbot: React.FC<MugiwaraChatbotProps> = ({
     string,
     { avatar: string; icon: string; title: string; greeting: string; chips: string[] }
   > = {
+    ChatGPT: {
+      avatar: LUFFY_AVATAR,
+      icon: '🤖',
+      title: 'ChatGPT Assistant (Python, Java, All Tech)',
+      greeting: 'Hello! I am your AI assistant in ChatGPT mode, powered by Gemini 3.8 Flash. I can write code in Python, Java, C++, TypeScript, design databases, explain algorithms, or draft plans. What would you like to work on?',
+      chips: ['Write a Python program', 'Write a Java program', 'Explain an algorithm', 'Debug my code'],
+    },
     Luffy: {
       avatar: LUFFY_AVATAR,
       icon: '🧭',
-      title: 'Captain & Navigator',
-      greeting: 'SHISHISHI! Ahoy Captain! I am ready to conquer any challenge with you. What are we building or planning today?',
-      chips: ['Plan MVP roadmap', 'Brainstorm product ideas', 'How do I scale this project?'],
+      title: 'Captain & Universal AI',
+      greeting: 'SHISHISHI! Ahoy Captain! I operate with the full power of ChatGPT and the spirit of a pirate king. Ask me for Python, Java, project roadmaps, or technical architecture!',
+      chips: ['Write a Python script', 'Write a Java program', 'Plan MVP roadmap', 'Brainstorm product ideas'],
     },
     Zoro: {
       avatar: ZORO_AVATAR,
       icon: '⚔️',
       title: 'Lead Software Architect',
-      greeting: 'Oi, Captain. Zoro here. Hand me the specs or code, and I will slice through the bugs and write clean, resilient architecture.',
-      chips: ['Write a TypeScript service', 'Fix and refactor this function', 'Optimize database performance'],
+      greeting: 'Oi, Captain. Zoro here. Hand me the specs, and I will slice through the bugs and write clean, resilient code in Python, Java, C++, TypeScript, Go, or any language you choose.',
+      chips: ['Python factorial program', 'Java factorial program', 'TypeScript architecture', 'Optimize runtime'],
     },
     Nami: {
       avatar: NAMI_AVATAR,
@@ -143,7 +150,7 @@ export const MugiwaraChatbot: React.FC<MugiwaraChatbotProps> = ({
     },
   };
 
-  const currentCrew = crewDetails[activeCrewMember] || crewDetails.Luffy;
+  const currentCrew = crewDetails[activeCrewMember] || crewDetails.ChatGPT || crewDetails.Luffy;
 
   // Handle Send with live token streaming (ChatGPT style)
   const handleSend = async (overridePrompt?: string) => {
@@ -423,7 +430,7 @@ export const MugiwaraChatbot: React.FC<MugiwaraChatbotProps> = ({
 
           {/* Crew Switcher Tabs */}
           <div className="px-3 py-2 bg-[#141d33] border-b border-white/5 flex items-center gap-1.5 overflow-x-auto shrink-0 scrollbar-none">
-            {(['Luffy', 'Zoro', 'Nami', 'Sanji', 'Chopper'] as const).map((name) => {
+            {(['ChatGPT', 'Luffy', 'Zoro', 'Nami', 'Sanji', 'Chopper'] as const).map((name) => {
               const isActive = activeCrewMember === name;
               const details = crewDetails[name];
               return (

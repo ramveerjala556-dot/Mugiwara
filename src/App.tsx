@@ -55,7 +55,7 @@ export default function App() {
 
   // Floating Chatbot State
   const [isChatbotOpen, setIsChatbotOpen] = useState(false);
-  const [chatbotActiveCrew, setChatbotActiveCrew] = useState<string>('Luffy');
+  const [chatbotActiveCrew, setChatbotActiveCrew] = useState<string>('ChatGPT');
   const [chatbotInitialPrompt, setChatbotInitialPrompt] = useState<string>('');
 
   // Modal Visibility States
@@ -151,14 +151,14 @@ export default function App() {
     attachments: Array<{ name: string; type: string; data?: string }>;
   }) => {
     setIsPromptSubmitting(true);
-    setChatbotActiveCrew('Luffy');
+    setChatbotActiveCrew('ChatGPT');
     setIsChatbotOpen(true);
 
     try {
       const result = await api.chatWithAI({
         prompt: payload.prompt,
         conversationId: activeConversation?.id,
-        crewMember: 'Luffy',
+        crewMember: 'ChatGPT',
         controls: payload.controls,
         attachments: payload.attachments,
       });
